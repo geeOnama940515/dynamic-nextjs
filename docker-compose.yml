@@ -1,9 +1,11 @@
 version: "3.9"
 
 services:
-  app:  # Fixed name - variables only work in values, not keys
-    container_name: ${CONTAINER_NAME}  # Variable works here
-    build: .
+  app:
+    container_name: ${CONTAINER_NAME}
+    build:
+      context: .  # Explicitly set build context
+      dockerfile: Dockerfile  # Explicitly point to Dockerfile
     ports:
       - "${APP_PORT}:5555"
     environment:
