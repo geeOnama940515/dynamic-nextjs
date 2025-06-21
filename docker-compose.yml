@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  nextjs-app:
-    container_name: nextjs-app
+  ${CONTAINER_NAME}:
+    container_name: ${CONTAINER_NAME}
     build: .
     ports:
       - "${APP_PORT:-5555}:5555"
